@@ -1,4 +1,9 @@
 <p style="color: green"><%= notice %></p>
+<% if user_signed_in? %>
+  <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= button_to "Login", new_user_session_path %>
+<% end %>
 
 <h1>Books</h1>
 
@@ -17,4 +22,6 @@
   </table>
 </div>
 
-<%= link_to "New book", new_book_path %>
+<% if user_signed_in? %>
+  <%= link_to "New book", new_book_path %>
+<% end %>
