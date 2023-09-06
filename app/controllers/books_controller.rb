@@ -4,7 +4,7 @@ class BooksController < ApplicationController
 
   # GET /books or /books.json
   def index
-    @books = Book.joins(:author).select("books.*, authors.name as author_name").all
+    @books = Book.page(params[:page]).per(10).joins(:author).select("books.*, authors.name as author_name").all
   end
 
   # GET /books/1 or /books/1.json

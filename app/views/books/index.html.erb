@@ -20,8 +20,11 @@
       </tr>
     <% end %>
   </table>
-</div>
+</div><br>
+
+<%= paginate @books %>
+<%= page_entries_info @books %>
 
 <% if user_signed_in? %>
-  <%= link_to "New book", new_book_path %>
+  <p><%= link_to "New book", new_book_path %></p>
 <% end %>
