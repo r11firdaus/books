@@ -1,14 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @book %>
+<h3><%= @book.title %>
+
+<table>
+  <th>Title</th>
+  <th>Author</th>
+  <th>Date Release</th>
+  <tr><%= render @book %></tr>
+</table>
 
 <div>
   <% if user_signed_in? %>
     <%= link_to "Edit this book", edit_book_path(@book) %> |
-  <% end %>
-  <%= link_to "Back to books", books_path %>
-
-  <% if user_signed_in? %>
     <%= button_to "Destroy this book", @book, method: :delete %>
   <% end %>
+
+  <p><%= link_to "Back to books", books_path %></p>
 </div>
