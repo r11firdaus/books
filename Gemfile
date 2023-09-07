@@ -71,6 +71,11 @@ group :test do
   gem "webdrivers"
 end
 
+group :development, :test do
+  # RSpec testing
+  gem "rspec-rails", "6.0.1"
+end
+
 gem "devise", "~> 4.9"
 
 gem 'kaminari'
