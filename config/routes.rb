@@ -9,4 +9,11 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {
     registrations: 'registrations'
   }
+
+  # API routes
+  namespace :api do
+    namespace :v1 do
+      resources :books
+    end
+  end
 end
